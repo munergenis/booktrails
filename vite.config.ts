@@ -24,7 +24,7 @@ export default defineConfig({
         name: 'BookTrail',
         short_name: 'BookTrail',
         description: 'Gestor de libros y colecciones',
-        theme_color: '#4CAF50',
+        theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
         start_url: '/',

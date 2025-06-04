@@ -101,7 +101,7 @@ export const AppLayout = () => {
               ))}
           </Tabs>
 
-          <NavbarContent justify="end">
+          {/* <NavbarContent justify="end">
             <NavbarItem>
               <Chip
                 variant="flat"
@@ -110,7 +110,7 @@ export const AppLayout = () => {
                 {username}
               </Chip>
             </NavbarItem>
-          </NavbarContent>
+          </NavbarContent> */}
         </Navbar>
 
         <main className="px-6 py-8 max-w-5xl mx-auto">

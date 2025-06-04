@@ -2,7 +2,7 @@
   "name": "BookTrail",
   "short_name": "BookTrail",
   "start_url": "/",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#ffffff",
   "theme_color": "#4CAF50",
   "icons": [

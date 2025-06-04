@@ -1,37 +1,20 @@
 import {
-  Button,
-  Chip,
   Image,
-  Input,
   Link,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
   Navbar,
   NavbarBrand,
   NavbarContent,
-  NavbarItem,
   Tab,
   Tabs,
-  useDisclosure,
 } from '@heroui/react';
 import { Outlet, useLocation } from 'react-router';
-import { useRef, useState } from 'react';
 
 import Logo from '/booktrail-transparent-256.webp';
-import { useUserName } from '@/features/user/hooks/useUserName';
+import { useState } from 'react';
 
 export const AppLayout = () => {
-  const userNameRef = useRef<HTMLInputElement>(null);
   const { pathname } = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const { userNameQuery, updateUserName } = useUserName();
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
-
-  const username = userNameQuery.data ?? 'Hello';
 
   const menuItems = [
     { label: 'Home', href: '/', nav: true },
@@ -116,48 +99,6 @@ export const AppLayout = () => {
         <main className="px-6 py-8 max-w-5xl mx-auto">
           <Outlet />
         </main>
-
-        <Modal
-          isOpen={isOpen}
-          onOpenChange={onOpenChange}
-        >
-          <ModalContent>
-            {(onClose) => (
-              <>
-                <ModalHeader>
-                  Hello {username !== 'Hello' && username}
-                </ModalHeader>
-                <ModalBody>
-                  <Input
-                    ref={userNameRef}
-                    placeholder="Change your username"
-                  />
-                  <div>
-                    <Button
-                      onPress={() =>
-                        updateUserName.mutate(
-                          userNameRef.current?.value || 'Hello',
-                          { onSuccess: onClose }
-                        )
-                      }
-                    >
-                      Update
-                    </Button>
-                  </div>
-                </ModalBody>
-                <ModalFooter>
-                  <Button
-                    color="danger"
-                    variant="light"
-                    onPress={onClose}
-                  >
-                    Cancel
-                  </Button>
-                </ModalFooter>
-              </>
-            )}
-          </ModalContent>
-        </Modal>
       </div>
     </>
   );

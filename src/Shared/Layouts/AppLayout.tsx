@@ -13,8 +13,6 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  NavbarMenu,
-  NavbarMenuToggle,
   Tab,
   Tabs,
   useDisclosure,
@@ -50,10 +48,10 @@ export const AppLayout = () => {
         >
           {/* LOGO and MENU icon */}
           <NavbarContent>
-            <NavbarMenuToggle
+            {/* <NavbarMenuToggle
               className="sm:hidden"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-            />
+            /> */}
             <NavbarBrand>
               <Link
                 href="/"
@@ -68,7 +66,7 @@ export const AppLayout = () => {
           </NavbarContent>
 
           {/* PHONE MENU */}
-          <Tabs
+          {/* <Tabs
             as={NavbarMenu}
             selectedKey={`/${pathname.split('/')[1]}`}
             isVertical
@@ -83,11 +81,12 @@ export const AppLayout = () => {
                 href={item.href}
               />
             ))}
-          </Tabs>
+          </Tabs> */}
 
           {/* PC NAV */}
           <Tabs
-            className="hidden sm:flex"
+            className="flex"
+            size="sm"
             selectedKey={`/${pathname.split('/')[1]}`}
           >
             {menuItems

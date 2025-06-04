@@ -80,7 +80,7 @@ export const Home = () => {
         </div>
       </div>
 
-      <div>
+      <div className="mt-4">
         {/* TODO: Remove */}
         <Button
           onPress={onOpen}
